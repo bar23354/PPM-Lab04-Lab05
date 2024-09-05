@@ -10,5 +10,7 @@
     <string name="my_groups">my_groups</string>
     <string name="my_events">my_events</string>
     <string name="library">library</string>
-    <string name="shopping_cart_content_desc" />
+    <string name="emergency">emergency</string>
+    <string name="clinica">clinica</string>
+    <string name="phone">phone</string>
 </resources>

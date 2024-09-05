@@ -84,6 +84,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
             )
         }
     }
+
     Column (
         horizontalAlignment = Alignment.End,
         modifier = Modifier.fillMaxSize()
@@ -130,9 +131,9 @@ fun App(name: String, modifier: Modifier = Modifier) {
             )
 
             //BOTONES
-            //My Campus
+                //My Campus
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() }, //Aparece texto al precionar botón
+                onClick = { Toast.makeText(context, "MY CAMPUS!", Toast.LENGTH_SHORT).show() }, //Aparece texto al precionar botón
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp), //Botón semi cuadrado
                 modifier = Modifier.width(470.dp).paddingFromBaseline(top = 400.dp), //Propiedades botón
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding //Botón con ícono en él
@@ -169,7 +170,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
             //My Friends
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() },
+                onClick = { Toast.makeText(context, "MY FRIENDS!", Toast.LENGTH_SHORT).show() },
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp),
                 modifier = Modifier.width(450.dp).paddingFromBaseline(top = 456.dp),
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding
@@ -198,7 +199,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
             //My Calendar
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() },
+                onClick = { Toast.makeText(context, "MY CALENDAR!", Toast.LENGTH_SHORT).show() },
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp),
                 modifier = Modifier.width(450.dp).paddingFromBaseline(top = 502.dp),
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding
@@ -226,7 +227,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
             //My Courses
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() },
+                onClick = { Toast.makeText(context, "MY COURSES!", Toast.LENGTH_SHORT).show() },
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp),
                 modifier = Modifier.width(450.dp).paddingFromBaseline(top = 548.dp),
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding
@@ -255,7 +256,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
             //My Grades
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() },
+                onClick = { Toast.makeText(context, "MY GRADES!", Toast.LENGTH_SHORT).show() },
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp),
                 modifier = Modifier.width(450.dp).paddingFromBaseline(top = 594.dp),
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding
@@ -284,7 +285,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
             //My Groups
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() },
+                onClick = { Toast.makeText(context, "MY GROUPS!", Toast.LENGTH_SHORT).show() },
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp),
                 modifier = Modifier.width(450.dp).paddingFromBaseline(top = 640.dp),
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding
@@ -313,7 +314,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
             //My Upcoming Events
             OutlinedButton(
-                onClick = { Toast.makeText(context, "Botón presionado!", Toast.LENGTH_SHORT).show() },
+                onClick = { Toast.makeText(context, "MY UPCOMING EVENTS!", Toast.LENGTH_SHORT).show() },
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp),
                 modifier = Modifier.width(450.dp).paddingFromBaseline(top = 686.dp),
                 contentPadding = ButtonDefaults.ButtonWithIconContentPadding
