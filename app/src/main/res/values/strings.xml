@@ -8,4 +8,16 @@
     <string name="privacy">Privacy</string>
     <string name="interrogacion">Help</string>
     <string name="i">About</string>
+    <string name="my_campus">my_campus</string>
+    <string name="my_friends">my_friends</string>
+    <string name="my_calendar">my_calendar</string>
+    <string name="my_courses">my_courses</string>
+    <string name="my_grades">my_grades</string>
+    <string name="my_groups">my_groups</string>
+    <string name="my_events">my_events</string>
+    <string name="library">library</string>
+    <string name="emergency">emergency</string>
+    <string name="clinica">clinica</string>
+    <string name="phone">phone</string>
+    <string name="close">close</string>
 </resources>

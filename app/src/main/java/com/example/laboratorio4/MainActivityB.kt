@@ -52,7 +52,7 @@ class MainActivityB : ComponentActivity() {
         setContent {
             Laboratorio4Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    App(
+                    AppB(
                         name = "Lab#4 Mi Perfil",
                         modifier = Modifier.padding(innerPadding)
                     )
@@ -63,7 +63,7 @@ class MainActivityB : ComponentActivity() {
 }
 
 @Composable
-fun App(name: String, modifier: Modifier = Modifier) {
+fun AppB(name: String, modifier: Modifier = Modifier) {
     //Images
     val image1 = painterResource(R.drawable.library)
     val settings = painterResource(R.drawable.settings)
@@ -354,8 +354,8 @@ fun OutlinedButtonExample(onClick: () -> Unit) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun AppPreview() {
+fun AppBPreview() {
     Laboratorio4Theme{
-        App("LAB#4 Mi Perfil")
+        AppB("LAB#4 Mi Perfil")
     }
 }

@@ -124,8 +124,8 @@ fun HighlightCard(imageRes: Int, title: String, color: Color = Color.LightGray) 
         )
         Text(
             text = title,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier= Modifier.padding(8.dp)
+            style = MaterialTheme.typography.bodyMedium.copy(color = Color.White),
+            modifier = Modifier.padding(8.dp)
         )
     }
 }
