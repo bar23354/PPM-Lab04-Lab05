@@ -13,6 +13,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -46,7 +47,10 @@ fun CampusInfoScreen() {
         Text(
             text = "Campus Central",
             style = MaterialTheme.typography.headlineMedium, //cfp: headline encontrado y seleccionado porque da un estilo de título
-            modifier = Modifier.padding(bottom = 8.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentSize(Alignment.Center)
+                .padding(bottom = 8.dp)
         )
 
         //Imagen 1 hasta arriba de la pantalla
@@ -61,7 +65,7 @@ fun CampusInfoScreen() {
 
         Text(
             text = "DESTACADOS",
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleMedium.copy(color = Color.Gray),
             modifier = Modifier.padding(vertical = 16.dp)
         )
         //Fila - elementos destacados
@@ -83,7 +87,7 @@ fun CampusInfoScreen() {
 
         Text(
             text = "SERVICIOS Y RECURSOS",
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleMedium.copy(color = Color.Gray),
             modifier = Modifier.padding(vertical = 16.dp)
         )
         //Fila - servicios y recursos
