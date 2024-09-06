@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 
+
 class MainActivityA: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,7 @@ class MainActivityA: ComponentActivity() {
 
 @Composable
 fun CampusInfoScreen() {
-    //comentarios para futuros proyectos:usa Column para poner el contenido verticalmente y hacer la pantalla "scrolleable"
+    //Column para poner el contenido verticalmente y hacer la pantalla "scrolleable"
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -68,9 +69,11 @@ fun CampusInfoScreen() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+            val darkGreen = Color(0, 128, 0)
             HighlightCard(
                 imageRes = R.drawable.servicenow,
-                title = "Service Now"
+                title = "Service Now",
+                color = darkGreen
             )
             HighlightCard(
                 imageRes = R.drawable.actualidaduvg,
@@ -88,9 +91,11 @@ fun CampusInfoScreen() {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+            val darkGreen = Color(0, 128, 0)
             HighlightCard(
                 imageRes = R.drawable.studentservices,
-                title = "Directorio de Servicios Estudiantiles"
+                title = "Directorio de Servicios Estudiantiles",
+                color = darkGreen
             )
             HighlightCard(
                 imageRes = R.drawable.biblioimagen,
@@ -101,29 +106,26 @@ fun CampusInfoScreen() {
 }
 
 @Composable
-fun HighlightCard(imageRes: Int, title: String) {
+fun HighlightCard(imageRes: Int, title: String, color: Color = Color.LightGray) {
     Column(
         modifier = Modifier
-            .width(160.dp)
-            .padding(8.dp)
+            .width(160.dp).padding(8.dp)
             .clip(RoundedCornerShape(8.dp))
-            .background(Color.LightGray)
+            .background(color)
             .clickable { }
     ) {
-        //cfp:elemento destacado (imagen), con ajuste dinámico en función de la anchura
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = title,
             modifier = Modifier
                 .fillMaxWidth()
-                .aspectRatio(1f) //cfp:R aspecto 1:1 para un cuadrado
+                .aspectRatio(1f)
                 .clip(RoundedCornerShape(8.dp))
         )
-        //titulo del elemento destacado
         Text(
             text = title,
             style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.padding(8.dp)
+            modifier= Modifier.padding(8.dp)
         )
     }
 }
