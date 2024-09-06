@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Laboratorio4</string>
+    <string name="app_name">Lab4-RobertoB-MarinesG</string>
+    <string name="setting">Settings</string>
+    <string name="user">User</string>
+    <string name="profile">Profile</string>
+    <string name="email">Email</string>
+    <string name="notifications">Notifications</string>
+    <string name="privacy">Privacy</string>
+    <string name="interrogacion">Help</string>
+    <string name="i">About</string>
 </resources>
