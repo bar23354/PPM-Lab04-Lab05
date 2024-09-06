@@ -13,4 +13,5 @@
     <string name="emergency">emergency</string>
     <string name="clinica">clinica</string>
     <string name="phone">phone</string>
+    <string name="close">close</string>
 </resources>

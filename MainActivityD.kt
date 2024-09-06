@@ -76,7 +76,7 @@ fun AppD(name: String, modifier: Modifier = Modifier) {
         ) {
             Icon(
                 Icons.Rounded.Close,
-                contentDescription = stringResource(id = R.string.shopping_cart_content_desc),
+                contentDescription = stringResource(id = R.string.close),
                 tint = Color(0xFF047d50)
             )
         }
@@ -208,7 +208,7 @@ fun AppD(name: String, modifier: Modifier = Modifier) {
                                     "• Atención a Emergencias\n"+
                                     "• Atención primaria a Enfermedades \nComunes"+
                                     "• Plan Educacional sobre Enfermedades\n"+
-                            "\nHorario de Atención: 7:00 a.m. a 8:30 p.m.\nCampus Central Edificio F 119-120 ")
+                                    "\nHorario de Atención: 7:00 a.m. a 8:30 p.m.\nCampus Central Edificio F 119-120 ")
                         }
                     },
                     color = Color.Black,

@@ -341,7 +341,6 @@ fun App(name: String, modifier: Modifier = Modifier) {
                 }
             }
         }
-
     }
 }
 
