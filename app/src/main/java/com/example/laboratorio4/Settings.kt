@@ -22,10 +22,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import androidx.compose.material3.IconButton
 import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 
 @Composable
-fun Settings(name: String, modifier: Modifier = Modifier) {
+fun Settings(name: String, navController: NavHostController, modifier: Modifier = Modifier) {
     val settings = painterResource(R.drawable.x)
     val context = LocalContext.current
 
@@ -41,20 +45,28 @@ fun Settings(name: String, modifier: Modifier = Modifier) {
                 .padding(bottom = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Image(
-                painter = settings,
-                contentScale = ContentScale.Fit,
-                contentDescription = stringResource(id = R.string.setting),
-                modifier = Modifier.size(24.dp)
-            )
+            IconButton(
+                onClick = {
+                    navController.navigate("RUTA Pendiente")
+                }
+            ) {
+                Image(
+                    painter = settings,
+                    contentScale = ContentScale.Fit,
+                    contentDescription = stringResource(id = R.string.setting),
+                    modifier = Modifier.size(24.dp)
+                )
+            }
+
             Text(
-                text = "Settings",
+                text = "Salir",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.weight(1f)
             )
         }
+
 
         SettingButton(
             icon = painterResource(R.drawable.profile),
@@ -113,6 +125,7 @@ fun Settings(name: String, modifier: Modifier = Modifier) {
     }
 }
 
+
 @Composable
 fun SettingButton(
     icon: Painter,
@@ -153,7 +166,7 @@ fun SettingButtonWithSubtitle(
     title: String,
     subtitle: String,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier 
+    modifier: Modifier = Modifier
 ) {
     OutlinedButton(
         onClick = onClick,
@@ -196,7 +209,8 @@ fun SettingButtonWithSubtitle(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun SettingsPreview() {
+    val navController = rememberNavController()
     Laboratorio4Theme {
-        Settings("LAB#4 Mi Perfil")
+        Settings("LAB#4 Mi Perfil", navController)
     }
 }
