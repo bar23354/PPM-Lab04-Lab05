@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,35 +17,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 
-class MainActivityC : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Laboratorio4Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    App(
-                        name = "Lab#4 Mi Perfil",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
-
 @Composable
-fun App(name: String, modifier: Modifier = Modifier) {
+fun Settings(name: String, modifier: Modifier = Modifier) {
     val settings = painterResource(R.drawable.x)
     val context = LocalContext.current
 
@@ -55,7 +34,6 @@ fun App(name: String, modifier: Modifier = Modifier) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        //"Settings" centrado y el ícono "X" a la izquierda
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
@@ -78,7 +56,6 @@ fun App(name: String, modifier: Modifier = Modifier) {
             )
         }
 
-        //Parte sin espacio entre ellos (botones)
         SettingButton(
             icon = painterResource(R.drawable.profile),
             text = "Edit Profile",
@@ -105,7 +82,6 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
         Spacer(Modifier.height(16.dp))
 
-        //Botones con textos en diferentes formatos
         SettingButtonWithSubtitle(
             icon = painterResource(R.drawable.interrogacion),
             title = "Help & Feedback",
@@ -122,7 +98,6 @@ fun App(name: String, modifier: Modifier = Modifier) {
 
         Spacer(Modifier.height(16.dp))
 
-        //Botón de Logout con espacio
         OutlinedButton(
             onClick = { Toast.makeText(context, "Logging out...", Toast.LENGTH_SHORT).show() },
             shape = RoundedCornerShape(5.dp),
@@ -132,8 +107,7 @@ fun App(name: String, modifier: Modifier = Modifier) {
             Text(
                 text = "Logout",
                 color = Color.Red,
-                fontSize = 20.sp,
-                modifier = Modifier.align(Alignment.CenterVertically)
+                fontSize = 20.sp
             )
         }
     }
@@ -179,7 +153,7 @@ fun SettingButtonWithSubtitle(
     title: String,
     subtitle: String,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier 
 ) {
     OutlinedButton(
         onClick = onClick,
@@ -217,10 +191,12 @@ fun SettingButtonWithSubtitle(
     }
 }
 
+
+
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun AppPreview() {
+fun SettingsPreview() {
     Laboratorio4Theme {
-        App("LAB#4 Mi Perfil")
+        Settings("LAB#4 Mi Perfil")
     }
 }

@@ -24,22 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivityA"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Laboratorio4" />
-
         <activity android:name=".MainActivityB"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Laboratorio4" />
-
-        <activity android:name=".MainActivityC"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Laboratorio4" />
-
-        <activity android:name=".MainActivityD"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Laboratorio4" />
