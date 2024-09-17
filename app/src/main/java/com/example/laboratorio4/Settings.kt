@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import androidx.compose.material3.IconButton
 import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 
 @Composable
