@@ -71,7 +71,7 @@ fun App(
             }
 
             composable(route = "screen2") {
-                Courses()
+                Curses(name = "Lab5", navController)
             }
         }
     }

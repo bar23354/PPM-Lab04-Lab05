@@ -1,10 +1,6 @@
 package com.example.laboratorio4
 
-import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,10 +18,14 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -42,28 +42,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 
-
-class MainActivityB : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Laboratorio4Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    AppB(
-                        name = "Lab#4 Mi Perfil",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
-
 @Composable
-fun AppB(name: String, modifier: Modifier = Modifier) {
+fun Curses(name: String, navController: NavHostController, modifier: Modifier = Modifier) {
     //Images
     val image1 = painterResource(R.drawable.library)
     val settings = painterResource(R.drawable.settings)
@@ -85,18 +70,27 @@ fun AppB(name: String, modifier: Modifier = Modifier) {
         }
     }
 
+    val green = Color(0xFF006400)
+    var color by remember { mutableStateOf(green)}
+
     Column (
         horizontalAlignment = Alignment.End,
         modifier = Modifier.fillMaxSize()
     ) {
         //Settings
-        Image(
-            painter = settings,
-            contentScale = ContentScale.Fit,
-            contentDescription = stringResource(id = R.string.setting),
-            modifier = Modifier.size(40.dp)
-        )
+        IconButton(
+            onClick = {
+                navController.navigate("Settings") //Cambia a pantalla Settings
+            }
+        ){
+            Icon(
+                painter = settings,
+                contentDescription = stringResource(id = R.string.setting),
+                modifier = Modifier.size(40.dp)
+            )
+        }
     }
+
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         Box(
             modifier = Modifier
@@ -131,7 +125,7 @@ fun AppB(name: String, modifier: Modifier = Modifier) {
             )
 
             //BOTONES
-                //My Campus
+            //My Campus
             OutlinedButton(
                 onClick = { Toast.makeText(context, "MY CAMPUS!", Toast.LENGTH_SHORT).show() }, //Aparece texto al precionar botón
                 shape = RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp, bottomEnd = 5.dp, bottomStart = 5.dp), //Botón semi cuadrado
@@ -345,17 +339,11 @@ fun AppB(name: String, modifier: Modifier = Modifier) {
 }
 
 
-@Composable
-fun OutlinedButtonExample(onClick: () -> Unit) {
-    OutlinedButton(onClick = { onClick() }) {
-        Text("Click!")
-    }
-}
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun AppBPreview() {
+fun CursesPreview() {
+    val navController = rememberNavController()
     Laboratorio4Theme{
-        AppB("LAB#4 Mi Perfil")
+        Curses("LAB#5 Curses", navController)
     }
 }
