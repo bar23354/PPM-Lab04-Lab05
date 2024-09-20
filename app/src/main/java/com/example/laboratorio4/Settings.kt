@@ -44,14 +44,9 @@ fun Settings(name: String, navController: NavHostController, modifier: Modifier 
                 .padding(bottom = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            IconButton(
-                onClick = {
-                    navController.navigate("RUTA Pendiente")
-                }
-            ) {
+            IconButton(onClick = { navController.navigate("curses") }) {
                 Image(
                     painter = settings,
-                    contentScale = ContentScale.Fit,
                     contentDescription = stringResource(id = R.string.setting),
                     modifier = Modifier.size(24.dp)
                 )
@@ -145,13 +140,11 @@ fun SettingButton(
             Icon(
                 painter = icon,
                 contentDescription = null,
-                tint = Color.Unspecified,
                 modifier = Modifier.size(32.dp)
             )
             Spacer(Modifier.width(8.dp))
             Text(
                 text = text,
-                color = Color.Black,
                 fontSize = 16.sp,
                 textAlign = TextAlign.Start
             )

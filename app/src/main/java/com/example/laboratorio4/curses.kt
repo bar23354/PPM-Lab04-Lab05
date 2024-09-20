@@ -73,16 +73,11 @@ fun Curses(name: String, navController: NavHostController, modifier: Modifier = 
     val green = Color(0xFF006400)
     var color by remember { mutableStateOf(green)}
 
-    Column (
+    Column(
         horizontalAlignment = Alignment.End,
         modifier = Modifier.fillMaxSize()
     ) {
-        //Settings
-        IconButton(
-            onClick = {
-                navController.navigate("Settings") //Cambia a pantalla Settings
-            }
-        ){
+        IconButton(onClick = { navController.navigate("settings") }) {
             Icon(
                 painter = settings,
                 contentDescription = stringResource(id = R.string.setting),
