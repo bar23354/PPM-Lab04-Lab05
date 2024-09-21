@@ -1,9 +1,7 @@
-package com.example.laboratorio4
+package com.example.myapplication
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,12 +26,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            Laboratorio4Theme {
+            MyApplicationTheme {
                 App()
             }
         }
@@ -45,7 +45,9 @@ fun App(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ) {
+    // Get current back stack entry
     val backStackEntry by navController.currentBackStackEntryAsState()
+    // Get the name of the current screen
     val currentScreen = backStackEntry?.destination?.route ?: "curses"
 
     Scaffold(
@@ -63,11 +65,12 @@ fun App(
             startDestination = "curses",
             modifier = modifier.padding(innerPadding)
         ) {
-            composable(route = "settings") {
-                Settings(name = "Lab5", navController = navController)
-            }
             composable(route = "curses") {
-                Curses(name = "Lab5", navController = navController)
+                curses(name = "Lab5", navController)
+            }
+
+            composable(route = "Settings") {
+                Settings(name = "Lab5", navController)
             }
         }
     }
@@ -78,6 +81,9 @@ fun App(
 fun AppBar(title: String, canNavigateBack: Boolean, navigateUp: () -> Unit = {}, modifier: Modifier = Modifier) {
     TopAppBar(
         title = { Text(text = title) },
+        colors = TopAppBarDefaults.mediumTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer
+        ),
         navigationIcon = {
             if (canNavigateBack) {
                 IconButton(onClick = navigateUp) {
@@ -91,4 +97,3 @@ fun AppBar(title: String, canNavigateBack: Boolean, navigateUp: () -> Unit = {},
         modifier = modifier
     )
 }
-
